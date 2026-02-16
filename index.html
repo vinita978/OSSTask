@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indrani Automotive & Engg. | Precision Manufacturing</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./Images/Nav_Logo.png" alt="Indrani Automotive Logo">
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Products <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Certification</a></li>
+                <li><a href="#">After Market</a></li>
+                <li><a href="#">Vendor <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    
+    <!-- hero section started  -->
+    <section class="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <span class="welcome-tag">Welcome</span>
+            <h1>INDRANI AUTOMOTIVE & ENGG.</h1>
+            <p>IATF 16949:2016, ISO 9001:2015, ISO 14001:2018</p>
+            <a href="#" class="btn-red">Read more</a>
+        </div>
+
+        <div class="hero-visuals">
+            <div class="red-bg-curve"></div>
+            
+            <div class="slider-container">
+                <div class="slide slide-1">
+                    <img src="./Images/ScrollFirst.png" alt="Appliances" class="main-product-img">
+                    <div class="labels">
+                        <div class="label-item">Engine-&-DG-Parts</div>
+                        <div class="label-item">Hinge</div>
+                        <div class="label-item">Motor</div>
+                    </div>
+                </div>
+
+                <div class="slide slide-2">
+                    <img src="./Images/ScrollSecond.png" alt="Motorcycle" class="main-product-img">
+                    <div class="labels">
+                        <div class="label-item">Engine Part</div>
+                        <div class="label-item">EV Parts</div>
+                        <div class="label-item">Ignition-&-PT Tanks</div>
+                    </div>
+                </div>
+
+                <div class="slide slide-3">
+                    <img src="./Images/ScrollThird.png" alt="Car" class="main-product-img">
+                    <div class="labels">
+                        <div class="label-item">EV parts</div>
+                        <div class="label-item">Safety System</div>
+                        <div class="label-item">Suspension</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- hero Section End  -->
+
+<!-- about Us Section started -->
+ <section class="about-section">
+    <div class="about-container">
+        <div class="about-images">
+            <div class="img-large">
+                <img src="./Images/about-us-1.jpg" alt="IAE Factory Exterior">
+            </div>
+            <div class="img-small-group">
+                <div class="experience-box">
+                    <h3>35+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="img-small">
+                    <img src="./Images/about-us-2.jpg" alt="IAE Factory Interior">
+                </div>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <span class="sub-title">About Us</span>
+            <h2>About Indrani Automotive & Engineering</h2>
+            <div class="journey-box">
+                <h3>Our Journey</h3>
+                <p>Indrani Automotive & Engineering (IAE) is a leading die casting components manufacturing corporation based in India. The ISO-certified organization specializes in tool manufacturing, die casting, machining, powder coating, painting, assembly and laboratory testing.</p>
+                
+                <p>Founded in 1989 with just 8 employees in Delhi, IAE began as a high-pressure die casting components manufacturer. Through decades of steady growth and strategic expansion, we have evolved into a comprehensive manufacturing group operating five state-of-the-art facilities across Gurugram and Chennai.</p>
+                
+                <p>Our journey reflects and focuses on our unwavering commitment to <strong>quality, innovation</strong>, meeting the evolving needs of our clients and delivering nothing but the best.</p>
+            </div>
+            <a href="#" class="btn-red">Read more</a>
+        </div>
+    </div>
+</section>
+ <!-- about Us Section End  -->
+
+ <!-- started Service Section  -->
+  <section class="services-section">
+    <div class="services-container">
+        <div class="services-intro">
+            <span class="sub-title">Services</span>
+            <h2>Our Best Services</h2>
+            <p>"Remember Three simple things: know your product better than anyone, know your customer, and have a burning desire to succeed. Customer satisfaction is our prime focus."</p>
+            <a href="#" class="btn-red">Contact Us</a>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" onclick="animateService(this)">
+                <div class="service-img-wrapper">
+                    <img src="./Images/service1.jpg" alt="Four Wheelers">
+                </div>
+                <div class="service-info">
+                    <span>Four Wheelers</span>
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="animateService(this)">
+                <div class="service-img-wrapper">
+                    <img src="./Images/service2.jpg" alt="Home Appliances">
+                </div>
+                <div class="service-info">
+                    <span>Home Appliances</span>
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="animateService(this)">
+                <div class="service-img-wrapper">
+                    <img src="./Images/service3.jpg" alt="Two Wheelers">
+                </div>
+                <div class="service-info">
+                    <span>Two Wheelers</span>
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="service-bg-accent"></div>
+</section>
+  <!-- End Started Section  -->
+
+
+
+    
+
+    <!-- <section class="Network"> -->
+    <div class="network-card">
+        <h2 class="network-title">Our Networks</h2>
+
+        <div class="maps-flex-container">
+            <div id="map1" class="map-box">
+                <!-- <img src="./SVG/World_Map.svg" alt="World Map"> -->
+            </div>
+            <div id="map2" class="map-box">
+                <!-- <img src="./SVG/India_states_with_ids_updated.svg" alt="India Map"> -->
+            </div>
+        </div>
+
+        <div class="legend-wrapper">
+            <div class="legend-item">
+                <span class="rect bg-red"></span> Head Office
+            </div>
+            <div class="legend-item">
+                <span class="rect bg-blue"></span> Plants
+            </div>
+            <div class="legend-item">
+                <span class="rect bg-green"></span> Customers
+            </div>
+            <div class="legend-item">
+                <span class="rect bg-yellow"></span> Offices
+            </div>
+        </div>
+    </div>
+<!-- </section> -->
+
+
+
+        <!-- footer section starting  -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-col about-col">
+                    <img src="./Images/Nav_Logo.png" alt="IAE Logo" class="footer-logo">
+                    <h2 class="brand-name">INDRANI AUTOMOTIVE & ENGG.</h2>
+                    <p>Indrani started its Journey in 1989 as a Pressure Die casting Manufacturer in Mayapuri, Delhi
+                        with 4
+                        employees. Looking at the demand in the market for its casted products, a new bigger and well
+                        equipped unit Indrani Automotive & Engg was set up in IMT Manesar Gurgaon in 2004.</p>
+                    <div class="social-links">
+                        <h3>Social Media</h3>
+                        <div class="icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">After Market</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Four Wheelers</a></li>
+                        <li><a href="#">Home Appliances</a></li>
+                        <li><a href="#">Two Wheelers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">
+                        <span class="icon-circle"><i class="fas fa-phone"></i></span>
+                        <p>0124 - 4369470/71/72</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon-circle"><i class="fas fa-envelope"></i></span>
+                        <p>info@indraniauto.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon-circle"><i class="fas fa-map-marker-alt"></i></span>
+                        <p>Plot No. 110, Sector 3, IMT Manesar Gurgaon - 122050, Haryana, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2025 <strong>Indrani Automotive & Engg.</strong> All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+            </script>
+        <!-- Leaflet MarkerCluster JS -->
+        <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+        <script src="index.js"></script>
+</body>
+
+</html>
