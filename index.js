@@ -21,7 +21,7 @@ navItems.forEach(link => {
 // --- SERVICES ANIMATION LOGIC ---
 /**
  * Triggers a 'pop' animation when a service card is clicked.
- * @param {HTMLElement} element - The service card element.
+ * @param {HTMLElement} element - 
  */
 function animateService(element) {
     // Add the animation class (defined in your CSS)
@@ -38,26 +38,57 @@ function animateService(element) {
 // ====================
 // First Map (International focused)
 // ====================
-const map1 = L.map('map1').setView([20, 0], 1);
+const map1 = L.map('map1', {
+    zoomControl: false, 
+    attributionControl: false       
+}).setView([23, -140], 1);
 
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
-L.tileLayer(tileUrl, { attribution }).addTo(map1);
+// L.tileLayer(tileUrl, { attribution }).addTo(map1);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map1);
+
+
 
 // ====================
 // Second Map ( India)
 // ====================
-const map2 = L.map('map2').setView([29.0, 77.5], 6);   //
+const map2 = L.map('map2', {
+    zoomControl: false,  
+    attributionControl: false     
+}).setView([21.5937, 78.9629], 4); 
+// const map2 = L.map('map2', {
+//     zoomControl: false,  
+//     attributionControl: false     
+// })
 
-L.tileLayer(tileUrl, { attribution }).addTo(map2);
+
+// L.tileLayer(tileUrl, { attribution }).addTo(map2);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map2);
+
+// const indiaBounds = L.latLngBounds(
+//    [5.0, 78.1167],
+//     [37.0, 97.5]
+// );
+// map2.fitBounds(indiaBounds);
+
+
 
 // ====================
 // Icons (shared between both maps)
 // ====================
 const greenIcon = L.icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+ shadowUrl: null,
   iconSize: [10, 15],
   iconAnchor: [6, 18],
   popupAnchor: [0, -15],
@@ -66,59 +97,61 @@ const greenIcon = L.icon({
 
 const redIcon = L.icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  shadowUrl: null,
   iconSize: [12, 18],
   iconAnchor: [6, 18],
-  popupAnchor: [0, -15]
+  popupAnchor: [0, -15],
+    className: "pulsing-marker"
 });
 
 const blueIcon = L.icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+ shadowUrl: null,
   iconSize: [12, 18],
   iconAnchor: [6, 18],
   popupAnchor: [0, -15],
   shadowSize: [20, 20],
-  shadowAnchor: [6, 18]
+  shadowAnchor: [6, 18],
+    className: "pulsing-marker"
 });
 
 const yellowIcon = L.icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+ shadowUrl: null,
   iconSize: [12, 18],
   iconAnchor: [6, 18],
   popupAnchor: [0, -15],
   shadowSize: [20, 20],
-  shadowAnchor: [6, 18]
+  shadowAnchor: [6, 18],
+    className: "pulsing-marker"
 });
 
 // ====================
 // Single shared places array (use same for both maps)
 // ====================
 const places = [
-  { coords: [30.704, 76.710], name: "Mohali (SAS Nagar), Punjab", icon: greenIcon },
+  { coords: [31.3723, 74.9196], name: "Mohali (SAS Nagar), Punjab", icon: greenIcon },
 
   // Delhi
-  { coords: [28.5753, 77.2235], name: "Delhi (South Extension) - Blue", icon: blueIcon },
-  { coords: [28.6139, 77.2090], name: "Delhi (Central) - Green", icon: greenIcon },
-
-  { coords: [28.4595, 77.0266], name: "Gurgaon (Gurugram), Haryana", icon: greenIcon },
+  { coords: [27.3553, 76.888483], name: "Delhi (South Extension) - Blue", icon: blueIcon },
+  { coords: [26.3553, 76.888483], name: "Delhi (Central) - Green", icon: greenIcon },
+  { coords: [30.3723, 74.9196], name: "Gurgaon (Gurugram), Haryana", icon: greenIcon },
 
   // Manesar (three colors with offsets)
-  { coords: [28.3723, 76.9196], name: "Manesar - Red", icon: redIcon },
-  { coords: [28.369273, 76.888483], name: "Manesar - Blue", icon: blueIcon },
+  { coords: [29.3723, 74.9196], name: "Manesar - Red", icon: redIcon },
+  { coords: [28.3553, 75.888483], name: "Manesar - Blue", icon: blueIcon },
   { coords: [28.3553, 76.9327], name: "Manesar - Yellow", icon: yellowIcon },
 
-  { coords: [28.5355, 77.3910], name: "Noida, Uttar Pradesh", icon: greenIcon },
-  { coords: [18.5204, 73.8567], name: "Pune, Maharashtra", icon: greenIcon },
+  { coords: [26.3553, 78.888483], name: "Noida, Uttar Pradesh", icon: greenIcon },
+  { coords: [18.5204, 76.8567], name: "Pune, Maharashtra", icon: greenIcon },
 
   // Chennai
   { coords: [13.0827, 80.2707], name: "Chennai - Blue", icon: blueIcon },
   { coords: [13.0827 + 0.0010, 80.2707 + 0.0007], name: "Chennai - Yellow", icon: yellowIcon },
 
   { coords: [11.9161, 79.8123], name: "Pondicherry (Puducherry)", icon: greenIcon },
-  { coords: [27.989, 76.388], name: "Neemrana, Rajasthan", icon: greenIcon },
-  { coords: [28.799, 76.134], name: "Bhiwani, Haryana", icon: greenIcon },
+  { coords: [24.3553, 73.888483], name: "Neemrana, Rajasthan", icon: greenIcon },
+  { coords: [25.3553, 72.888483], name: "Bhiwani, Haryana", icon: greenIcon },
 
   { coords: [39.9334, 32.8597], name: "Turkey - Ankara", icon: greenIcon },
   { coords: [50.0755, 14.4378], name: "Czech Republic - Prague", icon: greenIcon },
@@ -152,9 +185,9 @@ function addMarkersToMap(targetMap) {
     });
 
     // Click → zoom in (you can remove this if not needed)
-    marker.on('click', function () {
-      targetMap.setView(place.coords, 16, { animate: true });
-    });
+    // marker.on('click', function () {
+    //   targetMap.setView(place.coords, 16, { animate: true });
+    // });
   });
 }
 

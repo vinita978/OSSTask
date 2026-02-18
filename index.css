@@ -597,20 +597,36 @@ header {
     height: 70vh;
     width: 40vw;
 }
+/* Your CSS file या <style> tag में add करो */
+.leaflet-container {
+    background-color: white !important;   /* या #ffffff */
+}
+/* अगर सिर्फ map2 पर apply करना हो */
+#map2.leaflet-container {
+    background-color: white !important;
+}
+
+/* Extra: tile pane (tiles load area) को भी force white */
+.leaflet-tile-pane {
+    background-color: white !important;
+}
+
+
 
 #map2{
     height: 70vh;
     width: 40vw;
+    background: white !important;
 }
 /* Card Container Styling */
 .network-card {
     background: #ffffff;
-    padding: 40px;
+    padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
     max-width: 1200px;
     margin: 20px auto;
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
 }
 
 .network-title {
